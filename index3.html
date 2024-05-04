@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rosa - Luxury Makeup & Skincare</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-Rj0UO+xT0p3z5IVslJ0V0GZeXeDb5wEN1ZB+gqpbA25epNWLBmqM3Y6FvBCHjPXT" crossorigin="anonymous">
   <style>
     /* Global Styles */
     body {
@@ -127,7 +128,7 @@
       align-items: center;
       padding: 10px;
       opacity: 0;
-      transition: opacity 0.3s
+      transition: opacity 0.3s;
     }
   </style>
 </head>
@@ -157,21 +158,29 @@
       <p>Lightweight formula for a flawless, natural finish. Buildable coverage that hydrates and evens skin tone.</p>
       <div class="product-details">
         <span>Shop Now</span>
-        <i class="fas fa-dollar-sign"></i> </div>
+        <i class="fas fa-dollar-sign"></i>
+      </div>
     </article>
-    </section>
+    <!-- Add more product articles as needed -->
+  </section>
 
   <script>
-  const productCards = document.querySelectorAll('.product');
+    document.addEventListener('DOMContentLoaded', () => {
+      const productCards = document.querySelectorAll('.product');
 
-  productCards.forEach(card => {
-    card.addEventListener('mouseover', () => {
-      card.querySelector('.product-details').style.opacity = 1;
+      productCards.forEach(card => {
+        const productDetails = card.querySelector('.product-details');
+
+        card.addEventListener('mouseover', () => {
+          productDetails.style.opacity = 1;
+        });
+
+        card.addEventListener('mouseout', () => {
+          productDetails.style.opacity = 0;
+        });
+      });
     });
-    card.addEventListener('mouseout', () => {
-      card.querySelector('.product-details').style.opacity = 0;
-    });
-  });
   </script>
 </body>
 </html>
+
